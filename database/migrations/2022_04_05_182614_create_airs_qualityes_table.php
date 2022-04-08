@@ -21,10 +21,10 @@ return new class extends Migration
                 ->on('users');
             $table->string('name');
             $table->decimal('geo');
-            $table->string('geo 2,5');
-            $table->string('pmp 10');
-            $table->string('o3');
-            $table->string('so2');
+            $table->string('geo_2_5');
+            $table->string('pmp_10');
+            $table->string('o_3');
+            $table->string('so_2');
             $table->timestamps();
         });
     }
