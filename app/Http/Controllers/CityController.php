@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\City;
 use Illuminate\Http\Request;
 
 class CityController extends Controller
@@ -43,9 +44,11 @@ class CityController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(City $city)
     {
-        //
+        $city = City::all();
+
+        dd($city);
     }
 
     /**
