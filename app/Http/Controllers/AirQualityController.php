@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AirQuality;
+use GuzzleHttp\Client;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class AirQualityController extends Controller
 {
@@ -43,9 +46,15 @@ class AirQualityController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(AirQuality $airQuality)
     {
-        //
+        echo '<pre>';
+        $response = Http::get('https://api.waqi.info/feed/@11622/?token=832dffc28e45298ba9243129e78099b79ace538f');
+        $airQuality = json_decode($response, true);
+//        var_dump($airQuality);
+
+        $airQuality = new AirQuality();
+        $airQuality->
     }
 
     /**

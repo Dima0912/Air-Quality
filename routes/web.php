@@ -13,9 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+Route::name('home')->group(function () {
+    Route::get('/', 'App\Http\Controllers\HomeController@index')->name('home');
 });
+
 
 Route::name('users.')->group(function() {
     Route::post('users/registration', 'UserController@registration')->name('registration');
@@ -35,11 +39,11 @@ Route::name('cities')->group(function() {
 });
 
 Route::name('airs')->group(function() {
-    Route::get('airs', 'App\Http\Controllers\AirQualityConroller@index');
-    Route::get('airs/new', 'App\Http\Controllers\AirQualityConroller@create')->name('.create');
-    Route::post('airs/store', 'App\Http\Controllers\AirQualityConroller@store')->name('.store');
-    Route::get('airs/show', 'App\Http\Controllers\AirQualityConroller@show')->name('.show');
-    Route::get('airs/{air}/edit', 'App\Http\Controllers\AirQualityConroller@edit')->name('.edit');
-    Route::put('airs/{air}/update', 'App\Http\Controllers\AirQualityConroller@update')->name('.update');
-    Route::delete('airs/{air}', 'App\Http\Controllers\AirQualityConroller@destroy')->name('.delete');
+    Route::get('airs', 'App\Http\Controllers\AirQualityController@index');
+    Route::get('airs/new', 'App\Http\Controllers\AirQualityController@create')->name('.create');
+    Route::post('airs/store', 'App\Http\Controllers\AirQualityController@store')->name('.store');
+    Route::get('airs/show', 'App\Http\Controllers\AirQualityController@show')->name('.show');
+    Route::get('airs/{air}/edit', 'App\Http\Controllers\AirQualityController@edit')->name('.edit');
+    Route::put('airs/{air}/update', 'App\Http\Controllers\AirQualityController@update')->name('.update');
+    Route::delete('airs/{air}', 'App\Http\Controllers\AirQualityController@destroy')->name('.delete');
 });
