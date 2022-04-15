@@ -13,18 +13,18 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('airs_qualityes', function (Blueprint $table) {
+        Schema::create('air_qualities', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('city_id');
             $table->foreign('city_id')
                 ->references('id')
-                ->on('users');
+                ->on('city');
             $table->string('name');
             $table->decimal('geo');
-            $table->string('geo_2_5');
-            $table->string('pmp_10');
-            $table->string('o_3');
-            $table->string('so_2');
+            $table->string('pm_2_5');
+            $table->string('pm_1_0');
+            $table->string('o_3')->nullable();
+            $table->string('so_2')->nullable();
             $table->timestamps();
         });
     }
@@ -36,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('airs_qualityes');
+        Schema::dropIfExists('airs_qualities');
     }
 };

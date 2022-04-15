@@ -48,7 +48,7 @@ class CityController extends Controller
     {
         $city = City::all();
 
-        dd($city);
+    dd ($city);
     }
 
     /**
