@@ -20,9 +20,14 @@ return new class extends Migration
                 ->references('id')
                 ->on('city');
             $table->string('name');
-            $table->decimal('geo');
-            $table->string('pm_2_5');
-            $table->string('pm_1_0');
+            $table->decimal('geo')->nullable();
+            $table->string('pm_2_5')->nullable();
+            $table->string('pm_1_0')->nullable();
+            $table->float('dew')->nullable();
+            $table->float('h')->nullable();
+            $table->float('p')->nullable();
+            $table->float('t')->nullable();
+            $table->float('w')->nullable();
             $table->string('o_3')->nullable();
             $table->string('so_2')->nullable();
             $table->timestamps();

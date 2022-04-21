@@ -1,5 +1,7 @@
 @extends('layouts.app')
-@section('title') Главная страница @endsection
+@section('title')
+    Главная страница
+@endsection
 @section('content')
 
 @endsection

@@ -41,7 +41,7 @@ Route::name('cities')->group(function() {
 Route::name('airs')->group(function() {
     Route::get('airs', 'App\Http\Controllers\AirQualityController@index');
     Route::get('airs/new', 'App\Http\Controllers\AirQualityController@create')->name('.create');
-    Route::post('airs/store', 'App\Http\Controllers\AirQualityController@store')->name('.store');
+    Route::get('airs/store', 'App\Http\Controllers\AirQualityController@store')->name('.store');
     Route::get('airs/show', 'App\Http\Controllers\AirQualityController@show')->name('.show');
     Route::get('airs/{air}/edit', 'App\Http\Controllers\AirQualityController@edit')->name('.edit');
     Route::put('airs/{air}/update', 'App\Http\Controllers\AirQualityController@update')->name('.update');

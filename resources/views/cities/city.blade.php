@@ -17,11 +17,14 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($city as $cities)
-                                        <tr>
-                                            <td class="text-center"> {{$cities->name }}</td>
-                                        </tr>
-                                    @endforeach
+                                    <div class="container">
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option selected>...</option>
+                                            @foreach($city as $cities)
+                                                <option value="1">{{ $cities->name }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
                                     </tbody>
                                 </table>
                             </div>
