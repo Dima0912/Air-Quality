@@ -14,9 +14,6 @@
             <a class="nav-link active" aria-current="page" href="/" style="color: #1a202c">Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="cities/show" style="color: #1a202c">Cities</a>
-        </li>
-        <li class="nav-item">
             <a class="nav-link" href="" style="color: #1a202c">Contacts</a>
         </li>
         <div class="container">

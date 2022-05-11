@@ -52,26 +52,9 @@ class AirQualityController extends Controller
      */
     public function show(AirQuality $airs, AirQualityService $air)
     {
-//        $response = Http::get('https://api.waqi.info/feed/dnipro/?token=832dffc28e45298ba9243129e78099b79ace538f');
-//        $airQualityArray = json_decode($response, true);
-////        dd($airQualityArray);
-//        $airQualityModel = new AirQuality();
-//        $airQualityModel->name = $airQualityArray['data']['city']['name'];
-//        $airQualityModel->geo = $airQualityArray['data']['city']['geo'][0];
-//        $airQualityModel->pm_2_5 = $airQualityArray['data']['iaqi']['pm25']['v'];
-//        $airQualityModel->pm_1_0 = $airQualityArray['data']['iaqi']['pm10']['v'];
-//        $airQualityModel->dew = $airQualityArray['data']['iaqi']['dew']['v'];
-//        $airQualityModel->h = $airQualityArray['data']['iaqi']['h']['v'];
-//        $airQualityModel->p = $airQualityArray['data']['iaqi']['p']['v'];
-//        $airQualityModel->t = $airQualityArray['data']['iaqi']['t']['v'];
-//        $airQualityModel->w = $airQualityArray['data']['iaqi']['w']['v'];
-////        $airQualityModel->o_3 = $airQualityArray['data']['iaqi']['o_3']['v'];
-////        $airQualityModel->so_2 = $airQualityArray['data']['iaqi']['so2']['v'];
-//        $airQualityModel->city_id = 1;
-//
-//        $airQualityModel->save();
+//        return AirQualityService::create_air_quality($airs);
 
-        return  AirQualityService::create_air_quality($airs);
+        return $air->create_air_quality();
     }
 
     /**

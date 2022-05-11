@@ -7,5 +7,5 @@ use App\Models\AirQuality;
 
 interface AirQualityInterface
 {
-    public static function create_air_quality(AirQuality $airQuality);
+    public function create_air_quality();
 }
